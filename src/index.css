@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #09080D;
+  overflow-x: hidden;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09080D;
+}
+::-webkit-scrollbar-thumb {
+  background: #242133;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3D3759;
+}
+
+/* Spotlight card utility */
+.spotlight-card {
+  position: relative;
+  background-color: #111018;
+  border: 1px solid #242133;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.spotlight-card:hover {
+  border-color: #3D3759;
+  box-shadow: 0 0 24px -4px rgba(139, 92, 246, 0.14);
+}
+
+/* Print CV Stylesheet */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  a {
+    color: #111827 !important;
+    text-decoration: underline;
+  }
+
+  .spotlight-card {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}
